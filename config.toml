@@ -1,0 +1,18 @@
+[model]
+    [model.efficientnet]
+        model_path = 'model/efficientnetb0.keras'
+        img_h = 256
+        img_w = 256
+        batch_size = 8
+        labels = [
+            "Facebook, Inc.",
+            "Microsoft",
+            "Microsoft OneDrive",
+            "Orange",
+            "Spotify",
+            "Steam",
+            "UPS",
+            "Vodafone",
+            "Wells Fargo & Company",
+            "others",
+        ]
