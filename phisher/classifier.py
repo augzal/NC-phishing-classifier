@@ -24,7 +24,6 @@ class PhishingClassifier:
         """
         img = np.expand_dims(img, axis=0)
         probabilities = self.model.predict(img)
-        print(probabilities)
         return self._get_class_label(probabilities)[0]
 
     def classify_multiple_images(self, ds: tf.data.Dataset) -> list[str]:

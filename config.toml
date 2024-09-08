@@ -16,3 +16,5 @@
             "Wells Fargo & Company",
             "others",
         ]
+[results]
+    results_path = 'results/results.csv'

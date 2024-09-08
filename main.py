@@ -25,16 +25,19 @@ async def classify_image(file: UploadFile) -> str:
 
 
 @app.post("/evaluate_classification")
-def read_root(folder_path: Path = "data/test_data/") -> dict:
-    """predict and evaluate model. Provided directory should contain folders with images. Folder names should correspond to image class names.
+def read_root(
+    folder_path: Path = "data/test_data/", save_predictions: bool = True
+) -> dict:
+    """Predict and evaluate model. Provided directory should contain folders with images. Folder names should correspond to image class names.
 
     Args:
         folder_path (Path, optional): Path to the folder with images. Defaults to "data/test_data/".
+        save_predictions (bool): Saves predictions to csv file if true
 
     Returns:
         dict: Dictionary with predicted labels and evaluation results
     """
-    return pipeline.evaluate_classification(folder_path)
+    return pipeline.evaluate_classification(folder_path, save_predictions)
 
 
 if __name__ == "__main__":
